@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Roboto } from "next/font/google";
 import "./globals.css";
+import clsx from "clsx";
 
-const inter = Inter({ subsets: ["latin"] });
+const roboto = Roboto({ subsets: ["latin"], weight: ["100", "300", "400", "500", "700", "900"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,8 +16,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
-    </html>
+     <html className="h-full" lang="en">
+        <body className={clsx("relative antialiased h-full", roboto.className)}>
+           <main className="relative flex flex-col min-h-screen">
+              <div className="felx-grow flex-1">{children}</div>
+           </main>
+        </body>
+     </html>
   );
 }
