@@ -1,8 +1,10 @@
-import MaxWidthWrapper from "@/components/MixWidthWrapper";
-import Hero from "@/sections/Hero";
+import MaxWidthWrapper from "@/app/components/MixWidthWrapper";
+import Hero from "@/app/sections/Hero";
 
 export default function Home() {
-  return <MaxWidthWrapper>
-    <Hero />
-  </MaxWidthWrapper>;
+   return (
+      <MaxWidthWrapper>
+         <Hero />
+      </MaxWidthWrapper>
+   );
 }
